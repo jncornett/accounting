@@ -5,8 +5,14 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def home():
-    return render_template('index.html', app=CONFIG)
+@app.route('/planning')
+def planning():
+    return render_template('index.html', app=CONFIG, planning="active")
+
+
+@app.route('/simulation')
+def simulation():
+    return render_template('index.html', app=CONFIG, simulation="active")
 
 
 @app.route('/plans', methods=['GET', 'POST'])

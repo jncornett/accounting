@@ -10,6 +10,25 @@
         {% endfor %}
     </head>
     <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Acct</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="{{ planning }}"><a href="{{ url_for('planning') }}">Planning</a></li>
+                        <li class="{{ simulation }}"><a href="{{ url_for('simulation') }}">Simulation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         {% for script in app.scripts %}
         <script src="{{ url_for('static', filename=script) }}"></script>
         {% endfor %}
